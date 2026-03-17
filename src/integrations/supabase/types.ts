@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      payments: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          payment_type: string
+          plan_type: string
+          razorpay_payment_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          payment_type: string
+          plan_type: string
+          razorpay_payment_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          payment_type?: string
+          plan_type?: string
+          razorpay_payment_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          daily_answers_cap: number
+          daily_answers_used: number
+          daily_reset_date: string
+          id: string
+          name: string | null
+          plan_expiry: string | null
+          plan_type: string
+          searches_10mark: number
+          searches_2mark: number
+          searches_5mark: number
+          total_answers_generated: number
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_answers_cap?: number
+          daily_answers_used?: number
+          daily_reset_date?: string
+          id: string
+          name?: string | null
+          plan_expiry?: string | null
+          plan_type?: string
+          searches_10mark?: number
+          searches_2mark?: number
+          searches_5mark?: number
+          total_answers_generated?: number
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_answers_cap?: number
+          daily_answers_used?: number
+          daily_reset_date?: string
+          id?: string
+          name?: string | null
+          plan_expiry?: string | null
+          plan_type?: string
+          searches_10mark?: number
+          searches_2mark?: number
+          searches_5mark?: number
+          total_answers_generated?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
